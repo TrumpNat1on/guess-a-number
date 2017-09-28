@@ -1,10 +1,13 @@
+#Guess A Number AI
+#By: Nathan B
 import random
 import math
 
-# config
+# config_limits
 low = 1
 high = 100
-
+#intelligence
+intelligence = 1
 
 # helper functions
 def show_start_screen():
@@ -14,12 +17,19 @@ def show_start_screen():
 
 def show_credits():
     print("GOOODBYE!")
-def get_guess(current_low, current_high):
+    
+def average(current_low, current_high):
+    average = ((current_low + current_high) // 2)
+
+def get_guess(average, current_low, current_high, base=5):
     """
     Return a truncated average of current low and high.
     """
-    average = ((current_low + current_high) // 2)
-    return average
+    #versions
+    if intelligence == 0:
+        return random.randint(current_low, current_high)
+    elif intelligence == 1:
+        return int(base * round(float(average)/base))
 
 def pick_number():
     """
@@ -47,6 +57,7 @@ def check_guess(guess):
         return 0
     else:
         print("You didn't answer correctly")
+        
 def show_result(check):
     """
     Says the result of the game. (The computer might always win.)
@@ -74,18 +85,19 @@ def play():
     pick_number()
 
     while check != 0:
-        guess = get_guess(current_low, current_high)
+        guess = get_guess(average, current_low, current_high, base=5)
         check = check_guess(guess)
 
         if check == -1:
             # adjust current_low
             current_low = guess
-            pass
+            
         elif check == 1:
             # adjust current_high
             current_high = guess
 
-    show_result(guess)
+    show_result(check)
+    print("")
 
 # Game starts running here
 show_start_screen()

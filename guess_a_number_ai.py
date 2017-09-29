@@ -7,7 +7,7 @@ import math
 low = 1
 high = 100
 #intelligence
-intelligence = 1
+intelligence = 2
 
 # helper functions
 def show_start_screen():
@@ -17,19 +17,6 @@ def show_start_screen():
 
 def show_credits():
     print("GOOODBYE!")
-    
-def average(current_low, current_high):
-    average = ((current_low + current_high) // 2)
-
-def get_guess(average, current_low, current_high, base=5):
-    """
-    Return a truncated average of current low and high.
-    """
-    #versions
-    if intelligence == 0:
-        return random.randint(current_low, current_high)
-    elif intelligence == 1:
-        return int(base * round(float(average)/base))
 
 def pick_number():
     """
@@ -37,7 +24,26 @@ def pick_number():
     Then  wait until the player presses enter.
     """
     print("Think of a number between " + str(low) + " and " + str(high) + ".")
-    input("Press Enter to continue...")
+    player_number = input("Enter the number that you are thinking of... ")
+    return player_number
+
+def get_guess(current_low, current_high):
+    """
+    Return a truncated average of current low and high.
+    """
+    #versions
+    number = pick_number()
+    number_high = ((current_low + current_high) // 2) + 5
+    number_low = ((current_low + current_high) // 2) - 5
+    if intelligence == 0:
+        return random.randint(current_low, current_high)
+    elif intelligence == 1:
+        if ((current_low + current_high) // 2) > int(number) and ((current_low + current_high) // 2) < int(number_high) or ((current_low + current_high) // 2) < int(number) and ((current_low + current_high) // 2) > int(number_low):
+           return current_low
+        else:
+            return ((current_low + current_high) // 2)
+    elif intelligence == 2:
+        return ((current_low + current_high) // 2)
     
 def check_guess(guess):
     """
@@ -81,11 +87,9 @@ def play():
     current_low = low
     current_high = high
     check = -1
-    
-    pick_number()
 
     while check != 0:
-        guess = get_guess(average, current_low, current_high, base=5)
+        guess = get_guess(current_low, current_high)
         check = check_guess(guess)
 
         if check == -1:

@@ -6,7 +6,7 @@ import math
 game_work = True
 while game_work:
     name = input("Please enter your name: ")
-    version = input(str(name) + ", would you like to play the player version where you guess the computers' number or the ai version where the computer guesses your number?")
+    version = input(str(name) + ", would you like to play the player version where you guess the computers' number or the ai version where the computer guesses your number?  ")
     if str.lower(version) == "player":
         # helper functions
 
@@ -18,6 +18,7 @@ while game_work:
         def show_credits():
             print("***************************")
             print("*This was made by Trump himself*")
+            print("**This was completed 10/4/2017**")
             print("***************************")
             
         def get_guess():
@@ -109,6 +110,8 @@ while game_work:
 
         def show_credits():
             print("GOOODBYE!")
+            print("Nathan made dis")
+            print("Completed 10/4/17")
 
         def pick_number():
             """

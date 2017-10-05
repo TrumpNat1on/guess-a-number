@@ -6,7 +6,7 @@ import math
 game_work = True
 while game_work:
     name = input("Please enter your name: ")
-    version = input(str(name) + ", would you like to play the player version where you guess the computers' number or the ai version where the computer guesses your number?  ")
+    version = input(str(name) + ", would you like to play the player version where you guess the computers' number or the ai version where the computer guesses your number?  Enter 'ai' or 'player'.. ")
     if str.lower(version) == "player":
         # helper functions
 
@@ -96,8 +96,8 @@ while game_work:
 
     elif str.lower(version) == "ai":
         #intelligence
-        intelligence = 2
-
+        intelligence_old = input("What would you like the intelligence to be for the computer?")
+        intelligence = int(intelligence_old)
         
         # helper functions
 

@@ -1,0 +1,39 @@
+Python 3.6.2 (v3.6.2:5fd33b5, Jul  8 2017, 04:14:34) [MSC v.1900 32 bit (Intel)] on win32
+Type "copyright", "credits" or "license()" for more information.
+>>> Please enter your name: Nathan
+Nathan, would you like to play the player version where you guess the computers' number or the ai version where the computer guesses your number?  Enter 'ai' or 'player'.. ai
+What would you like the intelligence to be for the computer? Enter '0' '1' or '2'...  1
+*************************
+****** WELCOME TO ******
+****  Guess a Number A.I!  ****
+******** Nathan********
+*************************
+Please input the low that you wish the computer to use.....1
+Please input the high that you wish the computer to use.....10
+Nathan, please think of a number between 1 and 10.
+Press enter to continue... 
+
+Guess 1 of 4. Is 5 'Too high', 'Too low', or 'Correct' Nathan?too low
+
+Guess 2 of 4. Is 6 'Too high', 'Too low', or 'Correct' Nathan?too low
+
+Guess 3 of 4. Is 7 'Too high', 'Too low', or 'Correct' Nathan?correct
+Haha Nathan! Game over, I won in 3 tries!
+
+Would you like to play again Nathan? (y/n) y
+Nathan, please think of a number between 1 and 10.
+Press enter to continue... 
+
+Guess 1 of 4. Is 5 'Too high', 'Too low', or 'Correct' Nathan?too high
+
+Guess 2 of 4. Is 2 'Too high', 'Too low', or 'Correct' Nathan?too low
+
+Guess 3 of 4. Is 3 'Too high', 'Too low', or 'Correct' Nathan?too low
+
+Guess 4 of 4. Is 4 'Too high', 'Too low', or 'Correct' Nathan?correct
+Haha Nathan! Game over, I won in 4 tries!
+
+Would you like to play again Nathan? (y/n) n
+GOOODBYE!
+Nathan made dis
+Completed 10/4/17
